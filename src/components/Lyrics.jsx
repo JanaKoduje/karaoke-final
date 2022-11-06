@@ -4,11 +4,12 @@ const Lyrics = ({ lines, currentLineIndex }) => {
   const audioRef = useRef();
 
   useEffect(() => {
+    if (audioRef.current !== undefined) {
     audioRef.current.scrollIntoView({
       block: "start",
       inline: "nearest",
       behavior: "smooth",
-    });
+    })};
   }, [currentLineIndex]);
 
   return (

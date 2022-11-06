@@ -7,7 +7,7 @@ import lyricsLines from "./lyrics-lines";
 import "./style.css";
 
 const App = () => {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(-1);
 
   const handleTimeUpdate = (e) => {
     const actualIndex = lyricsLines.findIndex(
