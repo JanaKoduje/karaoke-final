@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
 
 const Lyrics = ({ lines, currentLineIndex }) => {
-  const audioRef = useRef();
+  const linesRef = useRef();
 
   useEffect(() => {
-    if (audioRef.current !== undefined) {
-    audioRef.current.scrollIntoView({
+    if (linesRef.current !== undefined) {
+    linesRef.current.scrollIntoView({
       block: "start",
       inline: "nearest",
       behavior: "smooth",
@@ -17,7 +17,7 @@ const Lyrics = ({ lines, currentLineIndex }) => {
       {lines.map((line, index) => {
         if (currentLineIndex === index) {
           return (
-            <p key={index} className="current-line" ref={audioRef}>
+            <p key={index} className="current-line" ref={linesRef}>
               {line.text}
             </p>
           );
