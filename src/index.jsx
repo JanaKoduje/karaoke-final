@@ -12,8 +12,8 @@ const App = () => {
   const handleTimeUpdate = (e) => {
     const actualIndex = lyricsLines.findIndex(
       (line) => line.time >= e.target.currentTime
-    );
-    if (actualIndex !== index) setIndex(actualIndex - 1);
+    ) - 1;
+    if (actualIndex > index) setIndex(actualIndex);
   };
 
   return (
